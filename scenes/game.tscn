@@ -149,10 +149,6 @@ zoom = Vector2(2.5, 2.5)
 limit_bottom = 150
 limit_smoothed = true
 
-[node name="DashTimer" type="Timer" parent="player"]
-wait_time = 0.15
-one_shot = true
-
 [node name="offmap" parent="." instance=ExtResource("3_c1xnw")]
 visible = false
 position = Vector2(64, 17)
@@ -206,7 +202,6 @@ visible = false
 position = Vector2(7, -9)
 shape = SubResource("RectangleShape2D_811ll")
 
-[connection signal="timeout" from="player/DashTimer" to="player" method="_on_dash_timer_timeout"]
 [connection signal="area_entered" from="offmap" to="player" method="_on_killzone_area_entered"]
 [connection signal="body_entered" from="Platform/EnterArea" to="Platform" method="_on_EnterArea_body_entered"]
 [connection signal="body_entered" from="Platform/EnterArea" to="Platform/EnterArea" method="_on_body_entered"]
