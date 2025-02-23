@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dydqhmstppfle" path="res://assets/sprites/cobbleplatform22.png" id="6_ub7fg"]
 [ext_resource type="PackedScene" path="res://scenes/angryplatform.tscn" id="7_6otth"]
 [ext_resource type="Script" path="res://scripts/angryplatform1.gd" id="8_j5sql"]
-[ext_resource type="PackedScene" uid="uid://da3iculppt0wa" path="res://scenes/lever.tscn" id="9_0wj4o"]
+[ext_resource type="PackedScene" path="res://scenes/lever.tscn" id="9_0wj4o"]
 [ext_resource type="Script" path="res://scripts/angryplatform2.gd" id="9_31ng4"]
 [ext_resource type="Script" path="res://scripts/angryplatform3.gd" id="10_s72bj"]
 [ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="12_tc56m"]
