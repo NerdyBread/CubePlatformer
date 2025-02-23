@@ -1,6 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq0kjo48cmtsd"]
+[gd_scene load_steps=8 format=3 uid="uid://cq0kjo48cmtsd"]
 
+[ext_resource type="Script" path="res://scenes/checkpoint.gd" id="1_dw77m"]
 [ext_resource type="Texture2D" uid="uid://c6sv8fbhox20t" path="res://assets/sprites/groundtemplates31.png" id="1_oqvn2"]
+[ext_resource type="Texture2D" uid="uid://ch7f6g4jupexc" path="res://assets/sprites/greenflagandbackgrounds2.png" id="1_rcqv8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k35i1"]
+atlas = ExtResource("1_rcqv8")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6cuh8"]
 atlas = ExtResource("1_oqvn2")
@@ -10,10 +16,18 @@ region = Rect2(150, 11, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_k35i1")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6cuh8")
 }],
 "loop": true,
-"name": &"default",
+"name": &"red",
 "speed": 5.0
 }]
 
@@ -22,12 +36,16 @@ size = Vector2(32, 32)
 
 [node name="Area2D" type="Area2D"]
 collision_mask = 2
+script = ExtResource("1_dw77m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(29, 17)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_u4s8y")
+animation = &"green"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(29, 17)
 shape = SubResource("RectangleShape2D_j8xh2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
