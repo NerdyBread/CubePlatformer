@@ -62,46 +62,49 @@ func handle_animation(direction):
 			animated_sprite.play("running")
 
 func _physics_process(delta: float) -> void:
-	# TODO Delete this
-	if Input.is_action_just_pressed("level2"):
-		switch_level()
-	
-		# Handle jump
-	if Input.is_action_just_pressed("jump"):
-		jump()
-			
-	# Add the gravity.
-	if not is_on_floor() and not dashing:
-		velocity += get_gravity() * delta
-
-	if is_on_floor():
-		dash_allowed = true
-		# Dash is restored each time player touches ground
+	if not dead:
+		# TODO Delete this
+		if Input.is_action_just_pressed("level2"):
+			switch_level()
 		
-	if Input.is_action_just_pressed("dash"):
-		if dash_allowed: # and (velocity.x != 0) 
-			start_dash()
+			# Handle jump
+		if Input.is_action_just_pressed("jump"):
+			jump()
+				
+		# Add the gravity.
+		if not is_on_floor() and not dashing:
+			velocity += get_gravity() * delta
 
-	# Get the input direction and handle the movement/deceleration.
-	var direction := Input.get_axis("move_left", "move_right")
-	
-	handle_animation(direction)
-	
-	if not dashing:
-		if direction:
-			velocity.x = direction * SPEED
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+		if is_on_floor():
+			dash_allowed = true
+			# Dash is restored each time player touches ground
+			
+		if Input.is_action_just_pressed("dash") and not dead:
+			if dash_allowed: # and (velocity.x != 0) 
+				start_dash()
 
-	if Input.is_action_just_pressed("reload"):
-		die()
-		reload_timer.start()
+		# Get the input direction and handle the movement/deceleration.
+		var direction := Input.get_axis("move_left", "move_right")
+		
+		handle_animation(direction)
+		
+		if not dashing:
+			if direction:
+				velocity.x = direction * SPEED
+			else:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	move_and_slide()
+		if Input.is_action_just_pressed("reload"):
+			die()
+			reload_timer.start()
+
+		move_and_slide()
 
 
 func die() -> void:
 	dead = true
+	velocity.x = 0
+	velocity.y = 0
 	animated_sprite.play("death")
 
 

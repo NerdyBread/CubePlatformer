@@ -1,8 +1,8 @@
 [gd_scene load_steps=23 format=3 uid="uid://dt3ehbo6gh0nl"]
 
 [ext_resource type="Script" path="res://scripts/playermove.gd" id="1_yf00g"]
-[ext_resource type="Texture2D" uid="uid://jamac4jaccek" path="res://assets/sprites/rubicdeathtemplate1.png" id="2_5oauv"]
-[ext_resource type="Texture2D" uid="uid://csod4i4gy8w0t" path="res://assets/sprites/rubicrun1.png" id="3_bmuej"]
+[ext_resource type="Texture2D" uid="uid://c8m7t13xgncph" path="res://assets/sprites/rubicdeathtemplate1.png" id="2_5oauv"]
+[ext_resource type="Texture2D" uid="uid://ebgcknlbmefy" path="res://assets/sprites/rubicrun1.png" id="3_bmuej"]
 [ext_resource type="Texture2D" uid="uid://b2jn7853u6mr4" path="res://assets/sprites/rubicidleanimation22.png" id="3_sen46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btxj1"]
