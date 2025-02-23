@@ -15,6 +15,7 @@ var dead = false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var reload_timer: Timer = $ReloadTimer
 @onready var dash_timer: Timer = $DashTimer
+@onready var level_timer: Timer = $LevelTimer
 
 func _ready():
 	if Globals.check == true:
@@ -40,7 +41,6 @@ func _on_dash_timer_timeout() -> void:
 func jump():
 	if dashing:
 		cancel_dash()
-		
 	if is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		double_jump_allowed = true
@@ -59,13 +59,16 @@ func handle_animation(direction):
 		if direction == 0 and not dead:
 			animated_sprite.play("idle")
 		elif not dead:
-			animated_sprite.play("running")
+			if dashing:
+				animated_sprite.play("dash")
+			else:
+				animated_sprite.play("running")
 
 func _physics_process(delta: float) -> void:
 	if not dead:
 		# TODO Delete this
-		if Input.is_action_just_pressed("level2"):
-			switch_level()
+		#if Input.is_action_just_pressed("level2"):
+			#switch_level()
 		
 			# Handle jump
 		if Input.is_action_just_pressed("jump"):
@@ -116,3 +119,10 @@ func _on_checkpoint_body_entered(body: Node2D) -> void:
 
 func _on_reload_timer_timeout() -> void:
 	get_tree().reload_current_scene()
+	
+func levelUp() -> void:
+	Globals.check = false
+	level_timer.start()
+
+func _on_level_timer_timeout() -> void:
+	switch_level()
