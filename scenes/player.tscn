@@ -225,7 +225,7 @@ scale = Vector2(1.55, 1.51442)
 sprite_frames = SubResource("SpriteFrames_78w6v")
 animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.718841
+frame_progress = 0.876486
 flip_h = true
 
 [node name="DashTimer" type="Timer" parent="."]
