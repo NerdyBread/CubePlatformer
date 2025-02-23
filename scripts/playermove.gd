@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 const SPEED = 200.0
-const JUMP_VELOCITY = -325.0
+const JUMP_VELOCITY = -375.0
 const DASH_SPEED = 800
+
+var double_jump_allowed = true
 
 var dash_allowed = true
 var dashing = false
@@ -18,7 +20,6 @@ var dead = false
 func start_dash():
 	velocity.x += DASH_SPEED * dash_direction
 	dash_timer.start()
-	print(dash_timer)
 	dashing = true
 	dash_allowed = false
 
@@ -31,7 +32,16 @@ func _on_dash_timer_timeout() -> void:
 	cancel_dash()
 	
 func jump():
-	velocity.y = JUMP_VELOCITY
+	if dashing:
+		cancel_dash()
+		
+	if is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		double_jump_allowed = true
+	elif double_jump_allowed:
+		print("Reached DJ")
+		velocity.y = JUMP_VELOCITY
+		double_jump_allowed = false
 	
 func handle_animation(direction):
 		if direction > 0:
@@ -47,6 +57,11 @@ func handle_animation(direction):
 			animated_sprite.play("running")
 
 func _physics_process(delta: float) -> void:
+		# Handle jump
+	if Input.is_action_just_pressed("jump"):
+		print("Jump pressed")
+		jump()
+			
 	# Add the gravity.
 	if not is_on_floor() and not dashing:
 		velocity += get_gravity() * delta
@@ -54,10 +69,6 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		dash_allowed = true
 		# Dash is restored each time player touches ground
-
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		jump()
 		
 	if Input.is_action_just_pressed("dash"):
 		if dash_allowed: # and (velocity.x != 0) 
@@ -66,13 +77,13 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")
 	
+	handle_animation(direction)
+	
 	if not dashing:
 		if direction:
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	handle_animation(direction)
 
 	if Input.is_action_just_pressed("reload"):
 		print("reload")
