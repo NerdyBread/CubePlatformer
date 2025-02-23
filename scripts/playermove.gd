@@ -14,9 +14,11 @@ var dead = false
 #var checkpoint
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var reload_timer: Timer = $Timer
+@onready var reload_timer: Timer = $ReloadTimer
 @onready var dash_timer: Timer = $DashTimer
 
+func switch_level():
+	get_tree().change_scene_to_file("res://scenes/Level2.tscn")
 
 func _ready() -> void: 
 	if not Globals.check:
@@ -63,6 +65,10 @@ func handle_animation(direction):
 			animated_sprite.play("running")
 
 func _physics_process(delta: float) -> void:
+	# TODO Delete this
+	if Input.is_action_just_pressed("level2"):
+		switch_level()
+	
 		# Handle jump
 	if Input.is_action_just_pressed("jump") and not dead:
 		jump()
