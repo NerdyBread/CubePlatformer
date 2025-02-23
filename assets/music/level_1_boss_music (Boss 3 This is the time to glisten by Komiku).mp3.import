@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1wiu3k7bbxfa"
+path="res://.godot/imported/level_1_boss_music (Boss 3 This is the time to glisten by Komiku).mp3-8a3073eefcfa6202a042a65b4653ec72.mp3str"
+
+[deps]
+
+source_file="res://assets/music/level_1_boss_music (Boss 3 This is the time to glisten by Komiku).mp3"
+dest_files=["res://.godot/imported/level_1_boss_music (Boss 3 This is the time to glisten by Komiku).mp3-8a3073eefcfa6202a042a65b4653ec72.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

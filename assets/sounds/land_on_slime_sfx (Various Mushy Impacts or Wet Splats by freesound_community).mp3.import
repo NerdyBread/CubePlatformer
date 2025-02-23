@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqr2t10gp42gn"
+path="res://.godot/imported/land_on_slime_sfx (Various Mushy Impacts or Wet Splats by freesound_community).mp3-7ae0606acdb64a74b7625257a08ec3f6.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/land_on_slime_sfx (Various Mushy Impacts or Wet Splats by freesound_community).mp3"
+dest_files=["res://.godot/imported/land_on_slime_sfx (Various Mushy Impacts or Wet Splats by freesound_community).mp3-7ae0606acdb64a74b7625257a08ec3f6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

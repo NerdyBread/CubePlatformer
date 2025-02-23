@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blfhhfli7g50a"
+path="res://.godot/imported/level_2_normal_music (game music by DeepMusicEveryDay).mp3-1ce8b36e7178388b366558cd44b34097.mp3str"
+
+[deps]
+
+source_file="res://assets/music/level_2_normal_music (game music by DeepMusicEveryDay).mp3"
+dest_files=["res://.godot/imported/level_2_normal_music (game music by DeepMusicEveryDay).mp3-1ce8b36e7178388b366558cd44b34097.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

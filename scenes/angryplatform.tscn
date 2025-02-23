@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://biolnkkuv561r"]
+
+[ext_resource type="Texture2D" uid="uid://dcd52iemccax1" path="res://assets/sprites/groundtemplates31.png" id="1_32164"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2ui4"]
+atlas = ExtResource("1_32164")
+region = Rect2(89, 13, 19, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsv2g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2ui4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdtgi"]
+size = Vector2(66, 24)
+
+[node name="CharacterBody2D" type="AnimatableBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.95835, -2.5)
+scale = Vector2(4.25, 4.25)
+sprite_frames = SubResource("SpriteFrames_hsv2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -12)
+shape = SubResource("RectangleShape2D_jdtgi")

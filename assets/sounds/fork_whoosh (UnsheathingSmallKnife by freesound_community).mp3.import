@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmqddlv3ppf2a"
+path="res://.godot/imported/fork_whoosh (UnsheathingSmallKnife by freesound_community).mp3-01067db0f3039d938e8ad2822721818b.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/fork_whoosh (UnsheathingSmallKnife by freesound_community).mp3"
+dest_files=["res://.godot/imported/fork_whoosh (UnsheathingSmallKnife by freesound_community).mp3-01067db0f3039d938e8ad2822721818b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
