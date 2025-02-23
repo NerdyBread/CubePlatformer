@@ -6,6 +6,7 @@
 script = ExtResource("1_chgbd")
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
