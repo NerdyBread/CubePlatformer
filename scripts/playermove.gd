@@ -39,7 +39,6 @@ func jump():
 		velocity.y = JUMP_VELOCITY
 		double_jump_allowed = true
 	elif double_jump_allowed:
-		print("Reached DJ")
 		velocity.y = JUMP_VELOCITY
 		double_jump_allowed = false
 	
@@ -59,7 +58,6 @@ func handle_animation(direction):
 func _physics_process(delta: float) -> void:
 		# Handle jump
 	if Input.is_action_just_pressed("jump"):
-		print("Jump pressed")
 		jump()
 			
 	# Add the gravity.
@@ -86,7 +84,6 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	if Input.is_action_just_pressed("reload"):
-		print("reload")
 		die()
 		reload_timer.start()
 
@@ -94,11 +91,8 @@ func _physics_process(delta: float) -> void:
 
 
 func die() -> void:
-	#print("access die")
 	dead = true
 	animated_sprite.play("death")
-	
-
 
 func _on_timer_timeout() -> void:
 	get_tree().reload_current_scene()
