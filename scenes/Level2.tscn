@@ -22,6 +22,7 @@ separation = Vector2i(4, 0)
 6:0/0 = 0
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.125, 0.125, -1.875, 8, -1.5, 6.875, 3.375, -8, 4)
 7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, 4, -8, 4, 8, -4, 8)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_143ej"]
 load_path = "res://.godot/imported/backgroundtiles1.png-1056cdf04b12b28595e59bf1f3527bbc.ctex"
@@ -77,12 +78,12 @@ limit_smoothed = true
 
 [node name="Enemy" parent="." instance=ExtResource("3_qmskc")]
 z_index = 5
-position = Vector2(599, -884)
+position = Vector2(599, -885)
 scale = Vector2(1.25, 1.25)
 
 [node name="Enemy2" parent="." instance=ExtResource("3_qmskc")]
 z_index = 5
-position = Vector2(199, -920)
+position = Vector2(199, -917)
 scale = Vector2(1.25, 1.25)
 
 [node name="TileMap" type="TileMap" parent="."]

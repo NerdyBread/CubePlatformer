@@ -66,7 +66,7 @@ func handle_animation(direction):
 
 func _physics_process(delta: float) -> void:
 	if not dead:
-		# TODO Delete this
+		## TODO Delete this
 		#if Input.is_action_just_pressed("level2"):
 			#switch_level()
 		
