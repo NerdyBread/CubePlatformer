@@ -11,20 +11,17 @@ var dashing = false
 var dash_direction = 1
 
 var dead = false
-#var checkpoint
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var reload_timer: Timer = $ReloadTimer
 @onready var dash_timer: Timer = $DashTimer
 
+func _ready():
+	if Globals.check == true:
+		position = Vector2(2095, -401)
+
 func switch_level():
 	get_tree().change_scene_to_file("res://scenes/Level2.tscn")
-
-func _ready() -> void: 
-	if not Globals.check:
-		position = Vector2(19, 11)
-	else:
-		position = Vector2(2095, -401)
 
 func start_dash():
 	velocity.x += DASH_SPEED * dash_direction
@@ -66,11 +63,11 @@ func handle_animation(direction):
 
 func _physics_process(delta: float) -> void:
 	# TODO Delete this
-	if Input.is_action_just_pressed("level2"):
-		switch_level()
+	#if Input.is_action_just_pressed("level2"):
+		#switch_level()
 	
 		# Handle jump
-	if Input.is_action_just_pressed("jump") and not dead:
+	if Input.is_action_just_pressed("jump"):
 		jump()
 			
 	# Add the gravity.
@@ -81,7 +78,7 @@ func _physics_process(delta: float) -> void:
 		dash_allowed = true
 		# Dash is restored each time player touches ground
 		
-	if Input.is_action_just_pressed("dash") and not dead:
+	if Input.is_action_just_pressed("dash"):
 		if dash_allowed: # and (velocity.x != 0) 
 			start_dash()
 
@@ -90,7 +87,7 @@ func _physics_process(delta: float) -> void:
 	
 	handle_animation(direction)
 	
-	if not dashing and not dead:
+	if not dashing:
 		if direction:
 			velocity.x = direction * SPEED
 		else:
@@ -101,17 +98,16 @@ func _physics_process(delta: float) -> void:
 		reload_timer.start()
 
 	move_and_slide()
-	
+
 
 func die() -> void:
 	dead = true
-	velocity.x=0
-	velocity.y=0
 	animated_sprite.play("death")
-
-func _on_timer_timeout() -> void:
-	get_tree().reload_current_scene()
 
 
 func _on_checkpoint_body_entered(body: Node2D) -> void:
 	Globals.check = true
+
+
+func _on_reload_timer_timeout() -> void:
+	get_tree().reload_current_scene()
