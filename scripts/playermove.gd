@@ -38,6 +38,7 @@ func _on_dash_timer_timeout() -> void:
 	cancel_dash()
 	
 func jump():
+	animated_sprite.play("jump")
 	if dashing:
 		cancel_dash()
 		
@@ -59,7 +60,10 @@ func handle_animation(direction):
 		if direction == 0 and not dead:
 			animated_sprite.play("idle")
 		elif not dead:
-			animated_sprite.play("running")
+			if dashing:
+				animated_sprite.play("dash")
+			else:
+				animated_sprite.play("running")
 
 func _physics_process(delta: float) -> void:
 	if not dead:
