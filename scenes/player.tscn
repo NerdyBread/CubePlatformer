@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/playermove.gd" id="1_yf00g"]
 [ext_resource type="Texture2D" uid="uid://jamac4jaccek" path="res://assets/sprites/rubicdeathtemplate1.png" id="2_5oauv"]
-[ext_resource type="Texture2D" uid="uid://dg5b8v6cs8752" path="res://assets/sprites/rubicidleanimation1.webp" id="2_docde"]
 [ext_resource type="Texture2D" uid="uid://csod4i4gy8w0t" path="res://assets/sprites/rubicrun1.png" id="3_bmuej"]
+[ext_resource type="Texture2D" uid="uid://b2jn7853u6mr4" path="res://assets/sprites/rubicidleanimation22.png" id="3_sen46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btxj1"]
 size = Vector2(18, 35)
@@ -32,13 +32,13 @@ region = Rect2(116, 1, 29, 32)
 atlas = ExtResource("2_5oauv")
 region = Rect2(145, 1, 29, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oq5yi"]
-atlas = ExtResource("2_docde")
-region = Rect2(0, 6, 20, 26)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bx3b"]
+atlas = ExtResource("3_sen46")
+region = Rect2(0, 7, 20, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d0igb"]
-atlas = ExtResource("2_docde")
-region = Rect2(20, 6, 20, 26)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecf34"]
+atlas = ExtResource("3_sen46")
+region = Rect2(20, 7, 20, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_73cy5"]
 atlas = ExtResource("3_bmuej")
@@ -98,11 +98,11 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_oq5yi")
+"duration": 2.2,
+"texture": SubResource("AtlasTexture_3bx3b")
 }, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_d0igb")
+"duration": 2.2,
+"texture": SubResource("AtlasTexture_ecf34")
 }],
 "loop": true,
 "name": &"idle",
@@ -146,11 +146,12 @@ position = Vector2(-75, -59.5)
 shape = SubResource("RectangleShape2D_btxj1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-73, -61)
+position = Vector2(-76, -61)
 scale = Vector2(1.55, 1.51442)
 sprite_frames = SubResource("SpriteFrames_78w6v")
 animation = &"running"
 autoplay = "idle"
+frame_progress = 0.428621
 flip_h = true
 
 [node name="Timer" type="Timer" parent="."]
