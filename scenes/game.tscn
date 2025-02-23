@@ -1,18 +1,18 @@
 [gd_scene load_steps=52 format=3 uid="uid://dm36dqfxels0t"]
 
-[ext_resource type="PackedScene" uid="uid://qrfnolfhv7da" path="res://scenes/Level1.tscn" id="1_jh8k7"]
+[ext_resource type="PackedScene" path="res://scenes/Level1.tscn" id="1_jh8k7"]
 [ext_resource type="PackedScene" uid="uid://dt3ehbo6gh0nl" path="res://scenes/player.tscn" id="2_2dwla"]
 [ext_resource type="PackedScene" uid="uid://b518hgfsats54" path="res://scenes/killzone.tscn" id="3_c1xnw"]
-[ext_resource type="Texture2D" uid="uid://dbbosjyxndqu0" path="res://assets/sprites/groundtemplates21.png" id="3_q7fkb"]
+[ext_resource type="Texture2D" uid="uid://cq10ox8b16h5i" path="res://assets/sprites/groundtemplates21.png" id="3_q7fkb"]
 [ext_resource type="Texture2D" uid="uid://0d31mvecye7k" path="res://assets/sprites/backgroundtiles1.png" id="4_g2v7m"]
-[ext_resource type="Texture2D" uid="uid://dcd52iemccax1" path="res://assets/sprites/groundtemplates31.png" id="4_m26xy"]
+[ext_resource type="Texture2D" uid="uid://c6sv8fbhox20t" path="res://assets/sprites/groundtemplates31.png" id="4_m26xy"]
 [ext_resource type="PackedScene" uid="uid://drlc6l232wyqu" path="res://scenes/platform.tscn" id="5_0hrf7"]
 [ext_resource type="Texture2D" uid="uid://dydqhmstppfle" path="res://assets/sprites/cobbleplatform22.png" id="6_ub7fg"]
-[ext_resource type="PackedScene" uid="uid://biolnkkuv561r" path="res://scenes/angryplatform.tscn" id="7_6otth"]
+[ext_resource type="PackedScene" path="res://scenes/angryplatform.tscn" id="7_6otth"]
 [ext_resource type="Script" path="res://scripts/angryplatform1.gd" id="8_j5sql"]
 [ext_resource type="Script" path="res://scripts/angryplatform2.gd" id="9_31ng4"]
 [ext_resource type="Script" path="res://scripts/angryplatform3.gd" id="10_s72bj"]
-[ext_resource type="PackedScene" uid="uid://cq0kjo48cmtsd" path="res://scenes/checkpoint.tscn" id="12_tc56m"]
+[ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="12_tc56m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0uqmy"]
 size = Vector2(1200, 6)
