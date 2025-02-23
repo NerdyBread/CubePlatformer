@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dm36dqfxels0t"]
+[gd_scene load_steps=52 format=3 uid="uid://dm36dqfxels0t"]
 
 [ext_resource type="PackedScene" uid="uid://qrfnolfhv7da" path="res://scenes/Level1.tscn" id="1_jh8k7"]
 [ext_resource type="PackedScene" uid="uid://dt3ehbo6gh0nl" path="res://scenes/player.tscn" id="2_2dwla"]
@@ -71,12 +71,6 @@ sources/0 = SubResource("TileSetAtlasSource_h80ee")
 sources/2 = SubResource("TileSetAtlasSource_opv3c")
 sources/1 = SubResource("TileSetAtlasSource_awd4b")
 sources/4 = SubResource("TileSetAtlasSource_k4two")
-
-[sub_resource type="GDScript" id="GDScript_mf08h"]
-script/source = "extends Node
-
-#var check = false
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ak23g"]
 size = Vector2(1088, 7)
@@ -389,7 +383,6 @@ layer_1/tile_data = PackedInt32Array(-1638478, 327681, 0, -1572942, 327681, 0, -
 [node name="Checkpoint" parent="Level1" instance=ExtResource("12_tc56m")]
 z_index = -1
 position = Vector2(1972, -470)
-script = SubResource("GDScript_mf08h")
 
 [node name="Lever" parent="Level1" instance=ExtResource("9_0wj4o")]
 position = Vector2(453, 568)
