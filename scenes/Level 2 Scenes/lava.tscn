@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://cy0jnjoiidpiy"]
+
+[ext_resource type="Texture2D" uid="uid://ckakopc6prs7o" path="res://assets/sprites/lava_top.png" id="1_bo0nc"]
+[ext_resource type="PackedScene" uid="uid://b518hgfsats54" path="res://scenes/killzone.tscn" id="2_qv5x0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6sb1"]
+atlas = ExtResource("1_bo0nc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se0q8"]
+atlas = ExtResource("1_bo0nc")
+region = Rect2(20, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0owij"]
+atlas = ExtResource("1_bo0nc")
+region = Rect2(0, 20, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asoee"]
+atlas = ExtResource("1_bo0nc")
+region = Rect2(20, 20, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2jnr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6sb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se0q8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0owij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asoee")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6uov"]
+size = Vector2(16, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iehes"]
+size = Vector2(16, 3)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2jnr4")
+autoplay = "default"
+frame_progress = 0.140665
+
+[node name="killzone" parent="AnimatedSprite2D" instance=ExtResource("2_qv5x0")]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/killzone"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_u6uov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_iehes")

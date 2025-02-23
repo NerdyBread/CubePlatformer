@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjmiw8ojhm882"]
+
+[ext_resource type="PackedScene" uid="uid://b518hgfsats54" path="res://scenes/killzone.tscn" id="2_eh21s"]
+[ext_resource type="Script" path="res://scripts/enemylv2.gd" id="2_tgkog"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_161oy"]
+load_path = "res://.godot/imported/slime_crawler.png-0f4ce0ff485ea0393f227bb91ca16954.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpswt"]
+size = Vector2(14, 8)
+
+[node name="Enemy" type="Sprite2D"]
+texture = SubResource("CompressedTexture2D_161oy")
+script = ExtResource("2_tgkog")
+
+[node name="killzone" parent="." instance=ExtResource("2_eh21s")]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_tpswt")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+z_index = 5
+position = Vector2(0, 3)
+target_position = Vector2(7, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 3)
+target_position = Vector2(-7, 0)
