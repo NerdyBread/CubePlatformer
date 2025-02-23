@@ -11,7 +11,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1d5ii"]
 distance = -223.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h80ee"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kegvm"]
 texture = ExtResource("3_q7fkb")
 margins = Vector2i(10, 11)
 separation = Vector2i(4, 0)
@@ -29,7 +29,7 @@ separation = Vector2i(4, 0)
 6:0/0 = 0
 7:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_awd4b"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxr2l"]
 texture = ExtResource("4_g2v7m")
 separation = Vector2i(4, 0)
 0:0/0 = 0
@@ -42,7 +42,7 @@ separation = Vector2i(4, 0)
 7:0/0 = 0
 8:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_opv3c"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8hhqa"]
 texture = ExtResource("4_m26xy")
 margins = Vector2i(10, 11)
 separation = Vector2i(4, 0)
@@ -55,9 +55,9 @@ separation = Vector2i(4, 0)
 
 [sub_resource type="TileSet" id="TileSet_0f83m"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_h80ee")
-sources/2 = SubResource("TileSetAtlasSource_opv3c")
-sources/1 = SubResource("TileSetAtlasSource_awd4b")
+sources/0 = SubResource("TileSetAtlasSource_kegvm")
+sources/2 = SubResource("TileSetAtlasSource_8hhqa")
+sources/1 = SubResource("TileSetAtlasSource_mxr2l")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tp6sl"]
 size = Vector2(624, 7)
@@ -145,16 +145,12 @@ size = Vector2(57, 39)
 position = Vector2(21, 8)
 collision_layer = 3
 
-[node name="Camera2D" type="Camera2D" parent="Level1/player"]
+[node name="Camera2D2" type="Camera2D" parent="Level1/player"]
 visible = false
 position = Vector2(-52, -51)
 zoom = Vector2(2.5, 2.5)
 limit_bottom = 150
 limit_smoothed = true
-
-[node name="DashTimer" type="Timer" parent="Level1/player"]
-wait_time = 0.2
-one_shot = true
 
 [node name="offmap" parent="Level1" instance=ExtResource("3_c1xnw")]
 visible = false
@@ -216,7 +212,6 @@ offset_right = 40.0
 offset_bottom = 23.0
 metadata/_edit_use_anchors_ = true
 
-[connection signal="timeout" from="Level1/player/DashTimer" to="Level1/player" method="_on_dash_timer_timeout"]
 [connection signal="area_entered" from="Level1/offmap" to="Level1/player" method="_on_killzone_area_entered"]
 [connection signal="body_entered" from="Level1/Platform/EnterArea" to="Level1/Platform" method="_on_EnterArea_body_entered"]
 [connection signal="body_entered" from="Level1/Platform/EnterArea" to="Level1/Platform/EnterArea" method="_on_body_entered"]
