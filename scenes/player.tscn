@@ -225,7 +225,7 @@ scale = Vector2(1.55, 1.51442)
 sprite_frames = SubResource("SpriteFrames_78w6v")
 animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.596302
+frame_progress = 0.718841
 flip_h = true
 
 [node name="DashTimer" type="Timer" parent="."]
@@ -233,5 +233,9 @@ wait_time = 0.2
 
 [node name="ReloadTimer" type="Timer" parent="."]
 
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 0.8
+
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
