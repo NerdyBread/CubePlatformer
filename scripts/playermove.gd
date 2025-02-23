@@ -103,6 +103,8 @@ func _physics_process(delta: float) -> void:
 
 func die() -> void:
 	dead = true
+	velocity.x = 0
+	velocity.y = 0
 	animated_sprite.play("death")
 	velocity.x = 0
 	velocity.y = 0
