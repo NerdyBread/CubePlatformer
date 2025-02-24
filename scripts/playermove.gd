@@ -43,7 +43,6 @@ func jump():
 		cancel_dash()
 	if is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		double_jump_allowed = true
 	elif double_jump_allowed:
 		velocity.y = JUMP_VELOCITY
 		double_jump_allowed = false
@@ -80,6 +79,7 @@ func _physics_process(delta: float) -> void:
 
 		if is_on_floor():
 			dash_allowed = true
+			double_jump_allowed = true
 			# Dash is restored each time player touches ground
 			
 		if Input.is_action_just_pressed("dash"):
