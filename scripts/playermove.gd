@@ -19,17 +19,20 @@ var dead = false
 
 func _ready():
 	if Globals.check == true:
-		position = Vector2(2095, -401)
+		position = Vector2(2095, -401) # What is this
 
+# Switch to level 2
 func switch_level():
 	get_tree().change_scene_to_file("res://scenes/Level2.tscn")
 
+# Binded to q
 func start_dash():
 	velocity.x += DASH_SPEED * dash_direction
 	dash_timer.start()
 	dashing = true
 	dash_allowed = false
 
+# If jump is pressed during a dash or the dash timer ends
 func cancel_dash():
 	if dashing:
 		velocity.x /= DASH_SPEED
@@ -115,7 +118,6 @@ func die() -> void:
 
 func _on_checkpoint_body_entered(body: Node2D) -> void:
 	Globals.check = true
-
 
 func _on_reload_timer_timeout() -> void:
 	get_tree().reload_current_scene()
